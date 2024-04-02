@@ -1,0 +1,130 @@
+
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+</head>
+<style>
+
+    body {
+        background-color: #ffd8a4;
+    }
+
+    button {
+        top: 60px;
+        font-family: "Madimi One", sans-serif;
+        margin: 10px;
+        width: 250px;
+        height: 70px;
+        border-radius: 45px;
+        background-color: rgb(231, 231, 231);
+        text-decoration: none;
+        cursor: pointer;
+        transition: 0.5s;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: box-shadow, transform;
+        transition-property: box-shadow, transform;
+        position: relative;
+    }
+
+
+
+    button:hover, button:focus, button:active {
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    h1 {
+        font-family: "Madimi One", sans-serif;
+        text-align: center;
+        position: relative;
+        top: 50px;
+        color: antiquewhite;
+        -webkit-text-stroke-color: gray;
+        -webkit-text-stroke-width: 0.5px;
+        font-size: 70px;
+    }
+
+    .next{
+    font-size: 30px;    
+     position: relative;
+     bottom: -150px;  
+     left: 500px;
+     color: antiquewhite;
+     -webkit-text-stroke-width: 0.5px;
+     -webkit-text-stroke-color: gray;
+     text-decoration: none;
+    }
+</style>
+<body>
+  <audio id="audio" src="wrong.mp3"></audio>
+
+
+    <h1 id="q2">
+        <p>10. What is the most common shape found in nature?</p>
+
+        <button class="button btn" type="button" onclick="my4()">A. Circle</button>
+
+        <button class="button btn" type="button" onclick="my2()">B. Square</button>
+
+        <button class="button btn" type="button" onclick="my1()">C. Triangle</button>
+
+        <button class="button btn right" type="button" onclick="my3()">D. Hexagon</button>
+        <br>
+
+        <a class="next" href="end.html">Next Question</a>
+
+<script>
+
+    const choices = document.querySelectorAll('button')
+
+    for (let choice of choices) {
+        console.log(choice)
+        choice.addEventListener("click", () => {
+
+            if (choice.classList.contains('right')) {
+                document.body.style.backgroundColor = '#9cff63'
+            }
+            else {
+                document.body.style.backgroundColor = '#ff695e'
+            }
+        })
+
+    }
+
+function wrong(x){
+changeColor('red')
+result.innerHTML = 'WRONG';
+}
+
+    function my1() {
+        setTimeout(() => {
+            alert("Thats not correct!")
+        }, 50)
+}
+function my2(){
+
+    setTimeout(() => {
+        alert("Wrong! Better luck next time!")
+    }, 50)
+}
+function my3(){
+    setTimeout(() => {
+        alert("You are correct!")
+    }, 50)
+    }
+
+function my4() {
+        setTimeout(() => {
+            alert("Wrong! Try Again")
+        }, 50)
+}
+
+
+</script>
+</body>
+</html>
